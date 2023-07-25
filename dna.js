@@ -30,6 +30,7 @@ class DNA {
     for (let i = 0; i < this.particles.length; i++) {
       fill(255, 100);
       stroke(255);
+      strokeWeight(1);
       if(i < 2 || i > this.particles.length - 3) {
         ellipse(this.particles[i].x, this.particles[i].y, 20);
       } else {
