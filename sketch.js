@@ -6,6 +6,7 @@ let handAttractions = [];
 
 // Adjust the pinch threshold according to the actual situation
 const pinchThreshold = 30;
+let particleGrabRadius = 20;
 
 function setup() {
   createCanvas(windowWidth,windowHeight);
@@ -20,9 +21,8 @@ function setup() {
   physics.setDrag(0.2);
   
   for(let i = 0; i < 4; i++) {
-    dnas.push(new DNA(100 + i * 200, 100, 10, physics));
+    dnas.push(new DNA(random(width), random(height), random(17), physics));
   }
-
   
 }
 
@@ -115,30 +115,41 @@ function draw() {
           let d = dist(midpoint.x, midpoint.y, dna.particles[i].x, dna.particles[i].y);
           
           if(d < 20) {
-            dna.particles[i].set(mouseX, mouseY);
+            dna.particles[i].set(width/2,height/2);
           }
-        }//只探测最开始的粒子
-    
+        } //只探测最开始的粒子
+        
         for(let i = dna.particles.length - 2; i < dna.particles.length; i++) {
           let d = dist(midpoint.x, midpoint.y, dna.particles[i].x, dna.particles[i].y);
           
           if(d < 20) {
-            dna.particles[i].set(mouseX, mouseY);
+            dna.particles[i].set(width/2,height/2);
           }
-        }//只探测倒数两个的粒子
+        } //只探测倒数两个的粒子
         
-      }
-
-      // let d = dist(midpoint.x, midpoint.y, particles[1].x, particles[1].y);
+      //   for(let i = 0; i < dna.particles.length; i++) { 
+      //   let d = dist(midpoint.x, midpoint.y, dna.particles[i].x, dna.particles[i].y);
       //   if (d < particleGrabRadius) {
-      //      particles[1].lock();
-      //      particles[1].x = midpoint.x;
-      //      particles[1].y = midpoint.y;
-      //      particles[1].unlock();
+      //     dna.particles[i].lock();
+      //     dna.particles[i].x = midpoint.x;
+      //     dna.particles[i].y = midpoint.y;
+      //     dna.particles[i].unlock();
       //   }
+      // }
+
+
+    }
     }
   }
 
+}
+
+function keyPressed(){
+  //press the space to reload
+  if(keyCode === 32){
+    location.reload();
+  }
+  
 }
 
 // function mouseDragged() {
