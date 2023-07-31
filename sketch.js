@@ -23,7 +23,6 @@ function setup() {
   for(let i = 0; i < 4; i++) {
     dnas.push(new DNA(random(width), random(height), random(17), physics));
   }
-  
 }
 
 function draw() {
@@ -125,8 +124,9 @@ function draw() {
           if(d < 20) {
             dna.particles[i].set(width/2,height/2);
           }
-        } //只探测倒数两个的粒子
-        
+        } 
+      
+      //只探测倒数两个的粒子
       //   for(let i = 0; i < dna.particles.length; i++) { 
       //   let d = dist(midpoint.x, midpoint.y, dna.particles[i].x, dna.particles[i].y);
       //   if (d < particleGrabRadius) {
@@ -136,12 +136,9 @@ function draw() {
       //     dna.particles[i].unlock();
       //   }
       // }
-
-
     }
     }
   }
-
 }
 
 function keyPressed(){
@@ -149,7 +146,6 @@ function keyPressed(){
   if(keyCode === 32){
     location.reload();
   }
-  
 }
 
 // function mouseDragged() {

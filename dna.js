@@ -37,7 +37,7 @@ class DNA {
         ellipse(this.particles[i].x, this.particles[i].y, 10);
       }
     }
-    
+
     for (let i = 0; i < this.springs.length; i++) {
       line(this.springs[i].a.x, this.springs[i].a.y, this.springs[i].b.x, this.springs[i].b.y);
     }
