@@ -94,7 +94,7 @@ function drawLandmarks(indexArray, hue) {
       let x = detections.multiHandLandmarks[i][j].x * width;
       let y = detections.multiHandLandmarks[i][j].y * height;
       // let z = detections.multiHandLandmarks[i][j].z;
-      stroke(hue, 40, 255);
+      stroke(hue, 40, 255,100);
       point(x, y);
     }
     endShape();

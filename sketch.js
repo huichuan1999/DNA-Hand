@@ -21,7 +21,7 @@ function setup() {
   physics.setDrag(0.2);
   
   for(let i = 0; i < 4; i++) {
-    dnas.push(new DNA(random(width), random(height), random(17), physics));
+    dnas.push(new DNA(random(width), random(height), random(3,20), physics));
   }
 }
 
