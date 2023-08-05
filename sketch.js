@@ -7,6 +7,7 @@ let handAttractions = [];
 // Adjust the pinch threshold according to the actual situation
 const pinchThreshold = 30;
 let particleGrabRadius = 20;
+let canvas;
 
 function setup() {
   createCanvas(windowWidth,windowHeight);
@@ -21,7 +22,7 @@ function setup() {
   physics.setDrag(0.2);
   
   for(let i = 0; i < 4; i++) {
-    dnas.push(new DNA(random(width), random(height), random(3,20), physics));
+    dnas.push(new DNA(random(width/6,width-width/6), random(height/6,height-height/6), random(3,20), physics));
   }
 }
 
@@ -105,7 +106,7 @@ function draw() {
         y: (landmarkCoordinates[8].y + landmarkCoordinates[4].y) / 2
       };
 
-      fill(255, 0, 0);
+      fill(255);
       noStroke();
       ellipse(midpoint.x, midpoint.y, 20, 20);
 
