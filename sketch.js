@@ -123,7 +123,7 @@ function draw() {
           let d = dist(midpoint.x, midpoint.y, dna.particles[i].x, dna.particles[i].y);
           
           if(d < 20) {
-            dna.particles[i].set(width/2,height/2);
+            dna.particles[i].set(random(width),random(height));
           }
         } 
       
